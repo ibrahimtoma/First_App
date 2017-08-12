@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import logo from './feed_logo.png';
 import './App.css';
-import Header from './Header';
-
-
-
+import Menu from './Menu';
+import MenuItem from './SlideMenu';
 
 
 
@@ -13,7 +11,11 @@ export default class Main extends Component {
         return(
 
             <div className="App">
-
+                <Menu ref="right" alignment="right">
+                    <MenuItem hash="first-page">First Page</MenuItem>
+                    <MenuItem hash="second-page">Second Page</MenuItem>
+                    <MenuItem hash="third-page">Third Page</MenuItem>
+                </Menu>
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
 
