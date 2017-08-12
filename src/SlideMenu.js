@@ -1,21 +1,13 @@
 import React from 'react';
-import DocumentTitle from 'react-document-title';
-import { LoginForm } from 'react-stormpath';
 
-export default class LoginPage extends React.Component {
+export default class MenuItem extends React.Component {
+    navigate(hash) {
+        window.location.hash = hash;
+    }
+
     render() {
         return (
-            <DocumentTitle title={`Login`}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xs-12">
-                            <h3>Login</h3>
-                            <hr />
-                        </div>
-                    </div>
-                    <LoginForm />
-                </div>
-            </DocumentTitle>
+            <div className="menu-item" onClick={this.navigate.bind(this, this.props.hash)}>{this.props.children}</div>
         );
     }
 }
