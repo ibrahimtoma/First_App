@@ -1,37 +1,23 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import DocumentTitle from 'react-document-title';
-import { LoginForm } from 'react-stormpath';
-export default class Login extends React.Component {
+import React, { Component } from 'react';
+//import * as API from './api';
 
-    constructor() {
-        this.state = {
-            user:‘’,
-        password: ‘’
-    };
+export default class Login extends React.Component{
+    render(){
+        if (this.props.user)
+            return <div>
+                <p>Hi{this.props.user.name}! </p>
+                <p> <button onClick={this.signout}> Sign Out</button> </p>
+            </div>;
 
+    return <div className="App">
+        <p> <input className='u-full-width' placeholder="username" ref='username' type="text"/> </p>
+        <p> <input className='u-full-width' placeholder="password" ref='password' type="password"/> </p>
+
+        <p> <button onClick={this.signin}> sign in</button> </p>
+
+    </div>;
     }
 
-    // This will be called when the user clicks on the login button
-    login(e) {
-        e.preventDefault();
-        // Here, we call an external AuthService. We’ll create it in the next step
-        Auth.login(this.state.user, this.state.password)
-            .catch(function(err) {
-                console.log(“Error logging in”, err);
-            });
-    }
 
-    render() {
-        return (
-            <form role=“form”>
-        <div className=“form-group”>
-          <input type=“text” valueLink={this.linkState(‘user’)}placeholder=“Username” />
-        <input type=“password” valueLink={this.linkState(‘password’)} placeholder=“Password” />
-    </div>
-        <button type=“submit” onClick={this.login.bind(this)}>Submit</button>
-    </form>
-    </div>
-    );
-    }
 }
+

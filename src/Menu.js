@@ -5,7 +5,9 @@ export default class Menu extends React.Component {
         super();
         this.state = {
             visible: false
-        }
+        };
+
+
     };
 
     show() {
@@ -22,14 +24,15 @@ export default class Menu extends React.Component {
         return (
             <div className="menu">
                 <div>
-                    <Menu ref="right" alignment="right">
-                        <MenuItem hash="first-page">First Page</MenuItem>
-                        <MenuItem hash="second-page">Second Page</MenuItem>
-                        <MenuItem hash="third-page">Third Page</MenuItem>
-                    </Menu>
+                    <button type="submit" onClick={this.Menu}>Menu</button>
+                    <MenuItem hash="Moved">Moved</MenuItem>
+                    <MenuItem hash="Arrived">Arrived</MenuItem>
+                    <MenuItem hash="Finished">Finished</MenuItem>
+                    <MenuItem hash="Return">Return</MenuItem>
                 </div>
                 <div className={(this.state.visible ? "visible " : "") + this.props.alignment}>{this.props.children}</div>
             </div>
         );
     }
+
 }

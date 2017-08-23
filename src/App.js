@@ -3,7 +3,7 @@ import logo from './feed_logo.png';
 import './App.css';
 import Menu from './Menu';
 import MenuItem from './SlideMenu';
-
+import Login from "./Login";
 
 
 export default class Main extends Component {
@@ -11,7 +11,6 @@ export default class Main extends Component {
         return(
 
             <div className="App">
-
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
 
@@ -19,7 +18,8 @@ export default class Main extends Component {
                 <p className="App-intro">
                     <h1>Hello From Feed</h1>
                 </p>
-                <h3>ibraheeeeeeeeeeeem</h3>
+
+
 
             </div>
 
